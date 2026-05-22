@@ -1,65 +1,67 @@
-import Image from "next/image";
+import { Heart, Gift, QrCode } from "lucide-react";
 
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
+    <main className="min-h-screen bg-[#FFF7F3] text-[#3A1F1A]">
+      <section className="mx-auto flex min-h-screen max-w-6xl flex-col items-center justify-center px-6 text-center">
+        <div className="mb-6 flex h-16 w-16 items-center justify-center rounded-full bg-[#E85D75] text-white shadow-lg">
+          <Heart size={32} fill="white" />
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
+
+        <h1 className="max-w-3xl text-4xl font-bold tracking-tight md:text-6xl">
+          Fatias Do Coração
+        </h1>
+
+        <p className="mt-6 max-w-2xl text-lg text-[#6B4A43] md:text-xl">
+          Transforme seu presente em uma lembrança inesquecível com mensagens
+          em texto, foto, áudio ou vídeo acessadas por QR Code.
+        </p>
+
+        <div className="mt-10 flex flex-col gap-4 sm:flex-row">
           <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+            href="/criar"
+            className="rounded-full bg-[#E85D75] px-8 py-4 font-semibold text-white shadow-lg transition hover:bg-[#d94d66]"
           >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
+            Criar mensagem
           </a>
+
           <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+            href="#como-funciona"
+            className="rounded-full border border-[#E85D75] px-8 py-4 font-semibold text-[#E85D75] transition hover:bg-white"
           >
-            Documentation
+            Como funciona
           </a>
         </div>
-      </main>
-    </div>
+
+        <div
+          id="como-funciona"
+          className="mt-16 grid w-full gap-6 md:grid-cols-3"
+        >
+          <div className="rounded-3xl bg-white p-6 shadow-sm">
+            <Gift className="mx-auto mb-4 text-[#E85D75]" size={32} />
+            <h2 className="font-bold">1. Compre o presente</h2>
+            <p className="mt-2 text-sm text-[#6B4A43]">
+              O cliente escolhe os doces e recebe um link para criar a surpresa.
+            </p>
+          </div>
+
+          <div className="rounded-3xl bg-white p-6 shadow-sm">
+            <Heart className="mx-auto mb-4 text-[#E85D75]" size={32} />
+            <h2 className="font-bold">2. Grave a mensagem</h2>
+            <p className="mt-2 text-sm text-[#6B4A43]">
+              Ele envia texto, foto, áudio ou vídeo para a pessoa presenteada.
+            </p>
+          </div>
+
+          <div className="rounded-3xl bg-white p-6 shadow-sm">
+            <QrCode className="mx-auto mb-4 text-[#E85D75]" size={32} />
+            <h2 className="font-bold">3. Gere o QR Code</h2>
+            <p className="mt-2 text-sm text-[#6B4A43]">
+              O QR Code vai no adesivo e abre a mensagem especial.
+            </p>
+          </div>
+        </div>
+      </section>
+    </main>
   );
 }
